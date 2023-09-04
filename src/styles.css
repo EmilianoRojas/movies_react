@@ -1,0 +1,27 @@
+/* Your existing CSS for .movie */
+.movie {
+  flex: 0 0 calc(20% - 20px);
+  max-width: calc(20% - 20px);
+  margin: 10px;
+}
+
+.movie img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Your CSS for .movie-list */
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center movies horizontally */
+  padding: 20px;
+  gap: 20px;
+}
+
+@media (min-width: 768px) { /* Change media query to min-width */
+  .movie {
+    flex-basis: calc(20% - 20px); /* Adjust for desktop screens */
+    max-width: calc(20% - 20px);
+  }
+}

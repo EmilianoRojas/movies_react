@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
-export default function Movies(){
+import Movie from "./Movie"
+import './styles.css'
+
+export default function MovieList(){
     const [movies, setMovies] = useState([])
-    const API_IMG = process.env.REACT_APP_API_IMG
     const API_KEY = process.env.REACT_APP_API_KEY
 
     useEffect(() => {
@@ -21,17 +23,16 @@ export default function Movies(){
 
         
         return (
-        <div>
-        <ul>
-            {movies.map(m => ( 
-            <li key={m.id}>
-                {m.original_title}
-                <img src={`${API_IMG}${m.poster_path}`} width="200" height="250" alt="movie poster"
-            >
-                </img>
-            </li>
+        <div className="movie-list">
+            {movies.map(movie => (
+                    <Movie 
+                        id={movie.id} 
+                        name={movie.original_title}
+                        title={movie.original_title}
+                        img={movie.poster_path}
+                        rating={movie.vote_average}
+                    />
             ))}
-        </ul>
         </div>
     )
 }
