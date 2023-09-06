@@ -19,6 +19,7 @@ export default function MovieList(){
         .then(data => setMovies(data.results))
         .catch(err => console.error(err));
         // eslint-disable-next-line react-hooks/exhaustive-deps
+        //disable console warning
         }, [])
 
         
