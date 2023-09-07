@@ -9,6 +9,7 @@ export default function Movie ({id, title, img, rating}) {
         </img>
         <h1>{title}</h1>
         <p>Rating: <b>{rating}</b></p>
+        <button>+</button>
     </div>
     )
 }

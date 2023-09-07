@@ -14,7 +14,8 @@ export default function MovieList(){
               Authorization: API_KEY
             }
         };
-        fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', options)
+        const get_movies_url = process.env.REACT_APP_API_GET_MOVIES
+        fetch(get_movies_url, options)
         .then(response => response.json())
         .then(data => setMovies(data.results))
         .catch(err => console.error(err));
